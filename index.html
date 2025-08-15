@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Contenu SCORM</title>
+    <script>
+        // API SCORM simplifiée
+        window.API_1484_11 = {
+            Initialize: function(param) { return "true"; },
+            Terminate: function(param) { return "true"; },
+            GetValue: function(element) {
+                switch(element) {
+                    case 'cmi.learner_id': return 'learner123';
+                    case 'cmi.learner_name': return 'Utilisateur Test';
+                    case 'cmi.completion_status': return 'not attempted';
+                    case 'cmi.success_status': return 'unknown';
+                    default: return '';
+                }
+            },
+            SetValue: function(element, value) { return "true"; },
+            Commit: function(param) { return "true"; },
+            GetLastError: function() { return "0"; },
+            GetErrorString: function(errorCode) { return "No error"; },
+            GetDiagnostic: function(errorCode) { return ""; }
+        };
+
+        // Redirection automatique vers le contenu SCORM
+        window.location.href = 'scorm-package/genially.html';
+    </script>
+</head>
+<body>
+    <p>Chargement du contenu SCORM...</p>
+</body>
+</html>
